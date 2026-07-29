@@ -14,3 +14,21 @@
  *  - Final payment
  * 2. Display the calculation results.
  */
+
+let foodQuantity = 3;
+let foodPrice = 18000;
+
+let drinkQuantity = 2;
+let drinkPrice = 5000;
+
+let discount = 10000;
+
+let totalFood = foodQuantity * foodPrice;
+let totalDrink = drinkQuantity * drinkPrice;
+let grandTotal = totalFood + totalDrink;
+let finalPayment = grandTotal - discount;
+
+console.log("Total Food:", totalFood);
+console.log("Total Drink:", totalDrink);
+console.log("Grand Total:", grandTotal);
+console.log("Final Payment:", finalPayment);

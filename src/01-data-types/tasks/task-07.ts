@@ -11,3 +11,43 @@
  * 
  * display the registration data using console.log.
  */
+
+const registration1: { studentId: string; fullName: string; gradeLevel: number; courseId: string; courseTitle: string; instructorName: string; totalLearningHours: number; registrationDate: string; isPaymentCompleted: boolean } = {
+  studentId: "ST2026045",
+  fullName: "Ciara Martintin",
+  gradeLevel: 11,
+  courseId: "CS101",
+  courseTitle: "Introduction to Programming",    
+  instructorName: "Mr. Agung",
+  totalLearningHours: 40,
+  registrationDate: "2026-10-01",
+  isPaymentCompleted: true
+};
+
+const registration2: { studentId: string; fullName: string; gradeLevel: number; courseId: string; courseTitle: string; instructorName: string; totalLearningHours: number; registrationDate: string; isPaymentCompleted: boolean } = {
+  studentId: "SH2026045",
+  fullName: "Hayfa Zizi",
+  gradeLevel: 11,
+  courseId: "CH101",
+  courseTitle: "Introduction to Programming",    
+  instructorName: "Mr. Agung",
+  totalLearningHours: 35,
+  registrationDate: "2026-10-01",
+  isPaymentCompleted: true
+};
+
+const registration3: { studentId: string; fullName: string; gradeLevel: number; courseId: string; courseTitle: string; instructorName: string; totalLearningHours: number; registrationDate: string; isPaymentCompleted: boolean } = {
+  studentId: "ST3026045",
+  fullName: "Mouza aqilla",
+  gradeLevel: 11,
+  courseId: "CS301",
+  courseTitle: "Introduction to Programming",    
+  instructorName: "Mr. Agung",
+  totalLearningHours: 40,
+  registrationDate: "2023-10-01",
+  isPaymentCompleted: true
+};
+
+console.log("Registration 1:", registration1);
+console.log("Registration 2:", registration2);
+console.log("Registration 3:", registration3);
