@@ -15,20 +15,21 @@
  * 2. Display the calculation results.
  */
 
-let foodQuantity = 3;
-let foodPrice = 18000;
+/*pernjelasan*/
+const friedRicePrice: number = 18000;
+const mineralWaterPrince: number = 5000;
+const friedRiceQuantity: number = 3;
+const mmineralWaterQuantity: number = 2;
+const discount: number = 10000;
 
-let drinkQuantity = 2;
-let drinkPrice = 5000;
-
-let discount = 10000;
-
-let totalFood = foodQuantity * foodPrice;
-let totalDrink = drinkQuantity * drinkPrice;
-let grandTotal = totalFood + totalDrink;
-let finalPayment = grandTotal - discount;
+const totalFood: number = friedRicePrice * friedRiceQuantity;
+const totalDrink: number = mineralWaterPrince * mmineralWaterQuantity;
+const grandTotal: number = totalFood * totalDrink;
 
 console.log("Total Food:", totalFood);
 console.log("Total Drink:", totalDrink);
 console.log("Grand Total:", grandTotal);
+
+/*menghitung setelah diskon*/
+const finalPayment: number = grandTotal  - discount;
 console.log("Final Payment:", finalPayment);
