@@ -18,7 +18,30 @@
  * 
  * The system should display the appropriate message.
  * Student Tasks: 
- * 1. Declare all variables.
- * 2. Implement the logic using nested if statements.
- * 3. Display the reservation result.
+ * 1. Deklarasikan semua variabel.
+ * 2. Implementasikan logika menggunakan nested if (if di dalam if).
+ * 3. Tampilkan hasil reservasi.
  */
+
+let customerName: string = "Nadia Putri";
+let isPremiumMember: boolean = true;
+let roomAvailable: boolean = false;
+
+console.log("Customer Name:", customerName);
+
+if (roomAvailable) {
+    if (isPremiumMember) {
+        console.log("Reservation Status: Free rom upgrade");
+    }else {
+        console.log("Reservation Status: Reserved room only");
+    }
+
+} else {
+
+    if (isPremiumMember) {
+        console.log("Reservation Status: Place on the priority waiting list");
+    } else {
+        console.log("Reservation Status: no rooms are available");
+    }
+
+}

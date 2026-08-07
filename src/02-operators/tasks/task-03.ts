@@ -25,4 +25,9 @@ const overtimeRate: number = 50000;
 
 const overtimePay: number = overtimeHours * overtimeRate;
 const bonus: number = overtimeHours > 10 ? 300000 : 0;
-const finalSalary: number basicSalary + 
+const finalSalary: number = basicSalary + overtimePay + bonus;
+
+console.log(`Employee Name: ${employeeName}`);
+console.log(`Overtime Pay: Rp${overtimePay}`);
+console.log(`Bonus: Rp${bonus}`);
+console.log(`Final Salary: Rp${finalSalary}`);

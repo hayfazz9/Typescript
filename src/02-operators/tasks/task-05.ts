@@ -33,3 +33,23 @@
  * - Calculate the remaining scholarship budget.
  * - Display whether the student is accepted.
  */
+
+const studentName: string = "Alya Putri"; 
+const GPA: number = 3.90; 
+const familyIncome: number = 4200000;
+const competitionCount: number = 4;
+const hasdisciplinaryRecord: boolean = false;
+const documentsComplete: boolean = true;
+
+//anggaran beasiswa dari universitas
+const scholarshipBudget: number = 5000000;
+
+const isEligible = GPA >= 3.75 && familyIncome < 5000000 && competitionCount >= 3 && !hasdisciplinaryRecord && documentsComplete;
+
+const scholarshipAmount: number = isEligible ? 12000000 : 0;
+const remainingBudget: number = scholarshipBudget - scholarshipAmount;
+
+console.log(`studentName: ${studentName}`);
+console.log(`accepted: ${isEligible}`);
+console.log(`scholarshipAmount: Rp${scholarshipAmount}`);
+console.log(`remainingBudget: Rp${remainingBudget}`);

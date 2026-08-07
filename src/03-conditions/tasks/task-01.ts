@@ -14,9 +14,22 @@
  * | Tuition Paid | Yes        |
  * 
  * Tasks:
- * 1. Declare all required variables.
- * 2. Implement the decision using an if statement.
- * 3. Display the appropriate message. if student meets all requirement, 
- * will be display "Congratulations! You are eligible to graduate.", 
- * otherwise display "You are not eligible to graduate."
- */
+ * 1. Deklarasikan semua variabel yang diperlukan.
+ * 2. Implementasikan logika keputusan menggunakan pernyataan if.
+ * 3. Tampilkan pesan yang sesuai.
+ * Jika siswa memenuhi semua persyaratan,
+ * tampilkan: "Selamat! Anda memenuhi syarat untuk lulus."
+ * Jika tidak memenuhi semua persyaratan,
+ * tampilkan: "Anda belum memenuhi syarat untuk lulus."
+ * */
+
+const StudentName: string = "Alya Putri";
+const FinalScore: number = 82;
+const Attendance: number = 94;
+const TuitionPaid: boolean = true;
+
+if (FinalScore >= 75 && Attendance >= 90 && TuitionPaid) {
+  console.log("Selamat! Anda memenuhi syarat untuk lulus.");
+} else {
+  console.log("Anda belum memenuhi syarat untuk lulus.");
+}

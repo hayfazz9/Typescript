@@ -1,34 +1,60 @@
 /**
- * A university is selecting students for a full scholarship.
- * The first screening requires:
- *  - GPA ≥ 3.75
- *  - Family income < Rp5,000,000
+ * Sebuah universitas sedang menyeleksi mahasiswa untuk mendapatkan beasiswa penuh.
+ * Tahap seleksi pertama mensyaratkan:
+ * - IPK ≥ 3,75
+ * - Penghasilan keluarga < Rp5.000.000
  * 
- * If the student passes the first screening, the university performs a second screening.
- * The second screening requires:
- *  - Competition participation ≥ 3
- *  - No disciplinary violations
- *  - Administrative documents are complete
+ * Jika mahasiswa lolos tahap seleksi pertama,
+ * maka universitas akan melakukan tahap seleksi kedua.
+ * Tahap seleksi kedua mensyaratkan:
+ * - Mengikuti minimal 3 kompetisi
+ * - Tidak memiliki catatan pelanggaran disiplin
+ * - Dokumen administrasi lengkap
  * 
- * Only students who pass both screening stages receive the scholarship.
- * Student information:
- * | Information             | Value         |
- * | ----------------------- | ------------- |
- * | Student Name            | Fajar Hidayat |
- * | GPA                     | 3.86          |
- * | Family Income           | 4200000       |
- * | Competition Count       | 4             |
- * | Has Disciplinary Record | No            |
- * | Documents Complete      | Yes           |
+ * Hanya mahasiswa yang lolos kedua tahap seleksi yang akan mendapatkan beasiswa.
+ * Data mahasiswa:
+ * | Informasi                 | Nilai          |
+ * | -------------------------- | -------------- |
+ * | Nama Mahasiswa            | Fajar Hidayat  |
+ * | IPK                       | 3,86           |
+ * | Penghasilan Keluarga      | 4.200.000      |
+ * | Jumlah Kompetisi          | 4              |
+ * | Memiliki Catatan Disiplin | Tidak          |
+ * | Dokumen Lengkap           | Ya             |
+ *
  * 
- * Display one of the following messages:
- *  - Scholarship Approved
- *  - Passed First Screening, but Failed Second Screening
- *  - Passed First Screening, but Failed Second Screening
- * 
- * Student Tasks
- *  - Declare all variables.
- *  - Implement the first screening.
- *  - Implement the second screening only if the first screening is passed.
- *  - Display the correct result.
+ * Tampilkan salah satu pesan berikut:
+ * - Beasiswa Disetujui
+ * - Lolos Seleksi Tahap Pertama, tetapi Gagal pada Tahap Kedua
+ * - Gagal pada Tahap Pertama
+ *
+ * Tugas Siswa:
+ * - Deklarasikan semua variabel.
+ * - Implementasikan seleksi tahap pertama.
+ * - Implementasikan seleksi tahap kedua hanya jika tahap pertama berhasil dilalui.
+ * - Tampilkan hasil yang sesuai.
  */
+
+const studentName: string = "Fajar Hidayat";
+const gpa: number = 3.86;
+const familyIncome: number = 4200000;
+const competitionCount: number = 4;
+const hasDisciplinaryRecord: boolean = false;
+const documentsComplete: boolean = true;
+
+console.log("Student Name:", studentName);
+
+if (gpa >= 3.75 && familyIncome < 5000000) {
+    if (
+        competitionCount >= 3 &&
+        !hasDisciplinaryRecord &&
+        documentsComplete
+    ) {
+        console.log("Scholarship Approved");
+    } else {
+        console.log("Passed the First Selection Stage, but Failed the Second Stage");
+    }
+
+} else {
+    console.log("Failed the First Selection Stage");
+}

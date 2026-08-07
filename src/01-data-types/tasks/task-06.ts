@@ -40,6 +40,12 @@ const product3: { productCode: string; productName: string; sellingPrice: number
     isDiscounted: true
 };
 
+const buy: number = 2;
+const total: number = product1.sellingPrice * buy;
+
 console.log("Product 1:", product1);
 console.log("Product 2:", product2);
 console.log("Product 3:", product3);
+console.log(`Harga laptop : ${product1.sellingPrice}`);
+console.log(`Jumlah laptop : ${buy}`);
+console.log(`Total Harga : Rp${total}`);

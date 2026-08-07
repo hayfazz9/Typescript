@@ -1,20 +1,21 @@
 /**
- * An airline automatically determines a passenger's check-in status.
- * Business Rules
+ * Sebuah maskapai penerbangan secara otomatis menentukan status check-in penumpang.
+ * Aturan Bisnis
  * Step 1
- * If the passenger has not checked in online, display:
- * "Please complete online check-in first.""
+ * Jika penumpang belum melakukan check-in online, 
+ * tampilkan pesan:
+ * "Silakan selesaikan proses check-in online terlebih dahulu."
  * 
  * Otherwise, continue.
  * Step 2
- * If baggage weight exceeds 20 kg:
- * - Business Class → Extra baggage allowed.
- * - Economy Class → Additional baggage fee required.
+ * Jika berat bagasi melebihi 20 kg:
+ * - Business Class → Bagasi tambahan diperbolehkan.
+ * - Economy Class → Harus membayar biaya bagasi tambahan.
  * 
  * Otherwise:
  * Proceed to boarding pass printing.
  * 
- * Passenger Information
+ * Informasi Penumpang:
  * | Information     | Value         |
  * | --------------- | ------------- |
  * | Passenger       | Fajar Nugroho |
@@ -23,7 +24,36 @@
  * | Baggage Weight  | 24 kg         |
  * 
  * Student Tasks
- * 1. Declare all variables.
- * 2. Implement the airline decision process.
- * 3. Display the correct message.
+ * 1. Deklarasikan semua variabel.
+ * 2. Implementasikan proses pengambilan keputusan maskapai.
+ * 3. Tampilkan pesan yang sesuai.
  */
+
+const passenger: string = "Fajar Nugroho";
+const onlineCheckIn: boolean = true;
+const cabinClass: string = "Economy";
+const baggageWeight: number = 24;
+
+console.log("Passenger:", passenger);
+
+if (onlineCheckIn) {
+
+    if (baggageWeight > 20) {
+
+        if (cabinClass === "Business") {
+            console.log("Extra baggage is allowed.");
+        } else {
+            console.log("Additional baggage fee is required.");
+        }
+
+    } else {
+
+        console.log("Proceed to boarding pass printing.");
+
+    }
+
+} else {
+
+    console.log("Please complete the online check-in process first.");
+
+}

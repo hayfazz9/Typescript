@@ -45,3 +45,32 @@ Student Tasks
 - Use nested conditional statements.
 - Display the final registration result.
  */
+
+const studentName: string = "Nadia Putri";
+const activeStudent: boolean = true;
+const tuitionPaid: boolean = true;
+const passedProgrammingFundamentals: boolean = true;
+const passedDatabaseSystems: boolean = true;
+const gpa: number = 3.45;
+const totalseats: number =50;
+const registrationStudent: number = 50;
+const registrationNumber: number = registrationStudent + 1;
+
+console.log("Student Name:", studentName);
+console.log("Registration Number:", registrationNumber);
+
+if (activeStudent && tuitionPaid) {
+    if (
+        passedProgrammingFundamentals && passedDatabaseSystems && gpa >= 3.20) {  
+             
+        if (registrationStudent < totalseats) {
+            console.log("Registration Successful");
+        } else {
+            console.log("Added to Waiting List");
+        }
+    } else {
+        console.log("Academic Requirements Not Met");
+    }
+} else {
+    console.log("Registration Rejected");
+}
