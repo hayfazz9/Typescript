@@ -13,8 +13,8 @@
  * - Average stock quantity
  */
 
-const stocks = [
-    25, 0, 18, 6, 42,
-    9, 0, 55, 13, 2,
-    30, 8, 41, 0, 16
-];
+const stocks = [25, 0, 18, 6, 42, 9, 0, 55, 13, 2, 30, 8, 41, 0, 16];
+
+let outStock = 0;
+let lowStock = 10;
+let safeStock = 10;

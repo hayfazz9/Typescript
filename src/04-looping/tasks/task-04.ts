@@ -23,3 +23,45 @@
  * 4. Number of transactions worth Rp300,000 or more
  * 5. Average transaction value
  */
+
+const sales: number[] = [
+    125000,
+    350000,
+    78000,
+    910000,
+    150000,
+    420000,
+    275000,
+    99000,
+    640000,
+    18000
+];
+
+let totalSales: number = 0;
+let highestTransaction: number = sales[0];
+let lowestTransaction: number = sales[0];
+let transaction300K: number = 0;
+
+for (let i = 0; i < sales.length; i++) {
+    totalSales += sales[i];
+
+    if (sales[i] > highestTransaction) {
+        highestTransaction = sales[i];
+    }
+
+    if (sales[i] < lowestTransaction) {
+        lowestTransaction = sales[i];
+    }
+
+    if (sales[i] >= 300000) {
+        transaction300K++;
+    }
+}
+
+const averageTransaction: number = totalSales / sales.length;
+
+console.log(`Total Sales: Rp${totalSales}`);
+console.log(`Highest Transaction: Rp${highestTransaction}`);
+console.log(`Lowest Transaction: Rp${lowestTransaction}`);
+console.log(`Transactions >= Rp300.000: ${transaction300K}`);
+console.log(`Average Transaction: Rp${averageTransaction}`);
