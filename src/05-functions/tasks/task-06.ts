@@ -12,35 +12,44 @@
  * Create the following functions:
  */
 
-const sales = [
-  125000,
-  780000,
-  250000,
-  99000,
-  540000,
-  670000,
-  180000,
-  450000,
-  310000,
-  820000
-];
+let transactions = [250000, 600000, 150000, 750000, 300000, 900000];
 
-function calculateTotalSales(sales: number[]): number {
-
+function calculateTotalSales(transactions: number[]): number {
+  let total = 0;
+  for (let i = 0; i < transactions.length; i++) {
+    total = total + transactions[i];
+  }
+  return total;
 }
 
-function findHighestTransaction(sales: number[]): number {
-
+function findHighestTransaction(transactions: number[]): number {
+  let highest = transactions[0];
+  for (let i = 1; i < transactions.length; i++) {
+    if (transactions[i] < highest) {
+      highest = transactions[i];
+    }
+  }
+  return highest;
 }
 
-function findLowestTransaction(sales: number[]): number {
-
+function findLowestTransaction(transactions: number[]): number {
+  let lowest = transactions[0];
+  for (let i = 1; i < transactions.length; i++) {
+    if (transactions[i] < lowest) {
+      lowest = transactions[i];
+    }
+  }
+  return lowest;
 }
 
-function calculateAverageSale(sales: number[]): number {
-
+function calculateAverageTransaction(transactions: number[]): number {
+  let count = 0;
+  for (let i = 0; i < transactions.length; i++) {
+    if (transactions[i] >= 75) {
+      count = count + 1;
+    }
+  }
+  return count;
 }
 
-function countLargeTransactions(sales: number[], minimumAmount: number): number {
 
-}

@@ -24,7 +24,7 @@ const scores: number[] = [
 
 let gold: number = 0;
 let silver: number = 0;
-let bronze: number = 0;
+let bronze: number = 1;
 let noMedal: number = 0;
 let totalScore: number = 0;
 

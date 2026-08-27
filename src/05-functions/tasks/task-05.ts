@@ -16,31 +16,52 @@
  * 4. Create function to return number of passing students.
  */
 
-const scores = [
-  82,
-  91,
-  76,
-  88,
-  69,
-  94,
-  73,
-  85,
-  79,
-  97
-];
+let scores = [80, 65, 90, 75, 60, 88, 72, 95];
 
-function findHighestScore(scores: number[]): number {
-
+function findHighest(scores: number[]): number {
+  let highest = scores[0];
+  for (let i = 1; i < scores.length; i++) {
+    if (scores[i] > highest) {
+      highest = scores[i];
+    }
+  }
+  return highest;
 }
 
-function findLowestScore(scores: number[]): number {
-
+function findLowest(scores: number[]): number {
+  let lowest = scores[0];
+  for (let i = 1; i < scores.length; i++) {
+    if (scores[i] < lowest) {
+      lowest = scores[i];
+    }
+  }
+  return lowest;
 }
 
-function calculateAverage(scores: number[]): number {
-    
+function findAverage(scores: number[]): number {
+  let total = 0;
+  for (let i = 0; i < scores.length; i++) {
+    total = total + scores[i];
+  }
+  return total / scores.length;
 }
 
-function countPassedStudents(scores: number[]): number {
-
+function countPassing(scores: number[]): number {
+  let count = 0;
+  for (let i = 0; i < scores.length; i++) {
+    if (scores[i] >= 75) {
+      count = count + 1;
+    }
+  }
+  return count;
 }
+
+function printReport(scores: number[]): void {
+  console.log("=== Student Score Report ===");
+  console.log("Highest Score: " + findHighest(scores));
+  console.log("Lowest Score: " + findLowest(scores));
+  console.log("Average Score: " + findAverage(scores));
+  console.log("Number of Passing Students: " + countPassing(scores));
+}
+
+printReport(scores);

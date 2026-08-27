@@ -11,10 +11,16 @@
  * 5. Display the returned value.
  */
 
-const prices = [
-    250000,
-    180000,
-    95000,
-    420000,
-    125000
-];
+let productPrices = [15000, 25000, 10000, 5000];
+
+function calculateTotalPrice(prices: number[]): number {
+  let total = 0;
+  for (let i = 0; i < prices.length; i++) {
+    total = total + prices[i];
+  }
+  return total;
+}
+
+let total = calculateTotalPrice(productPrices);
+
+console.log("Total purchase amount: " + total);
