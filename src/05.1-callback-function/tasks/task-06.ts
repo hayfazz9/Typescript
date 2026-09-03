@@ -26,8 +26,14 @@ type Employee = {
     salary: number
     performance: number
 }
-type PERFORMANCE_STATUS = "Exceeds Expectations" | "Meets Expectations" | "Needs Improvement"
+type PERFORMANCE_STATUS =
+    "Exceeds Expectations" |
+    "Meets Expectations" |
+    "Needs Improvement" |
+    "Unsatisfactory"
+
 type EMPLOYEE_BONUS = Employee & { bonus: number }
+
 type EMPLOYEE_PERFORMANCE = Employee & { status: PERFORMANCE_STATUS }
 
 const employees: Employee[] = [
@@ -40,18 +46,51 @@ const employees: Employee[] = [
 
 
 function calculateFinalSalary(selectedEmployee: Employee): EMPLOYEE_BONUS {
-    // implementation: this function return employee data with bonus and updated final salary
-    return;
+    let bonusRate = 0;
+    if (selectedEmployee.performance >= 90) {
+        bonusRate = 0.15;
+    } else if (selectedEmployee.performance >= 80) {
+        bonusRate = 0.10;
+    } else if (selectedEmployee.performance >= 70) {
+        bonusRate = 0.05;
+    }
+
+    const bonus = selectedEmployee.salary * bonusRate;
+    const finalSalary = selectedEmployee.salary + bonus;
+
+    return {
+        ...selectedEmployee, salary: finalSalary, bonus: bonus
+    };
 }
-function getPerformanceStatus(selectedEmployee: Employee): EMPLOYEE_PERFORMANCE {
-    return;
+
+function getPerformanceStatus(
+    selectedEmployee: Employee
+): EMPLOYEE_PERFORMANCE {
+
+    let status: PERFORMANCE_STATUS;
+
+    if (selectedEmployee.performance >= 90) {
+        status = "Exceeds Expectations";
+    } else if (selectedEmployee.performance >= 80) {
+        status = "Meets Expectations";
+    } else if (selectedEmployee.performance >= 70) {
+        status = "Needs Improvement";
+    } else {
+        status = "Unsatisfactory";
+    }
+
+    return {
+        ...selectedEmployee,
+        status: status
+    };
 }
 
 function employeeProcess<T>(
     arr: Employee[],
     callback: (employee: Employee) => T
 ): T[] {
-    return;
+
+    return arr.map(callback);
 }
 
 const employeeWithFinalSalary = employeeProcess(employees, calculateFinalSalary)

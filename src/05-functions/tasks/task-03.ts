@@ -11,7 +11,7 @@
  * 5. Display the returned value.
  */
 
-let productPrices = [15000, 25000, 10000, 5000];
+const productPrices = [15000, 25000, 10000, 5000];
 
 function calculateTotalPrice(prices: number[]): number {
   let total = 0;
@@ -21,6 +21,6 @@ function calculateTotalPrice(prices: number[]): number {
   return total;
 }
 
-let total = calculateTotalPrice(productPrices);
+const total = calculateTotalPrice(productPrices);
 
 console.log("Total purchase amount: " + total);
