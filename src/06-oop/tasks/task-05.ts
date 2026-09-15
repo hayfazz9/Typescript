@@ -43,6 +43,51 @@
  * getInventoryValue(): calculate price × stock
  */
 
+class Product {
+    constructor(
+        private productId: string,
+        private productName: string,
+        private price: number,
+        private stock: number
+    ) {}
+
+    public addStock(quantity: number): void {
+        if (quantity > 0) {
+            this.stock += quantity;
+        }
+    }
+
+    public removeStock(quantity: number): void {
+        if (quantity > 0 && quantity <= this.stock) {
+            this.stock -= quantity;
+        }
+    }
+
+    public changePrice(newPrice: number): void {
+        if (newPrice > 0) {
+            this.price = newPrice;
+        }
+    }
+
+    public isAvailable(): boolean {
+        return this.stock > 0;
+    }
+
+    public getInventoryValue(): number {
+         return this.price * this.stock;
+    }
+
+    showProductInfo(): void {
+        console.log("=== Product Information ===");
+        console.log("Product ID: " + this.productId);
+        console.log("Product Name: " + this.productName);
+        console.log("Price: Rp" + this.price);
+        console.log("Stock: " + this.stock);
+        console.log("Inventory Value: Rp" + this.getInventoryValue());
+    }
+}
+
+
 const laptop = new Product(
     "PRD001",
     "Gaming Laptop",
@@ -56,6 +101,8 @@ laptop.removeStock(3);
 
 laptop.changePrice(14500000);
 
-console.log(laptop.isAvailable());
+laptop.showProductInfo();
 
-console.log(laptop.getInventoryValue());
+console.log("Available: " + laptop.isAvailable());
+
+console.log("Inventory Value: Rp" + laptop.getInventoryValue());
